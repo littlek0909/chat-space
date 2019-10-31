@@ -27,14 +27,14 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |email|string|null: false|
-|password|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :tweets
-- has_many :groups
+- has_many :messages
+- has_many :groups,through: :groups_users
+- has_many :groups_users
 
-## tweetsテーブル
+
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
@@ -43,20 +43,18 @@ Things you may want to cover:
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- has_many :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string||
-|user_name|string||
-|tweets_id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false, foreign_key: true|
+|name|string||
 
 ### Association
-- has_many :users
-- has_many :tweets
+- has_many :users, through: :groups_users
+- has_many :messages
+- has_many :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -65,15 +63,5 @@ Things you may want to cover:
 |groups_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
-
-## groups_tweetsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|tweets_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :groups
-- belongs_to :tweets
+- belongs_to :group
+- belongs_to :user
