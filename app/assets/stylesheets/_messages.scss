@@ -60,7 +60,7 @@
           font-size: 20px;
         }
         .messages__infos--members{
-          color: #999999;
+          color: $message-contents-group-day;
           font-size: 12px;
           margin-top: 15px;
           margin-left: 40px;
@@ -102,8 +102,6 @@
       }
     }
     .forms{
-      //横のながさ指定すると、サイトが崩れるの何故なのか？
-      //float left rightを指定したらできたが、flex display使用したらできないのは何故なのか。
       box-sizing: border-box;
       height: 90px;
       padding: 20px 50px 20px 40px;
@@ -114,17 +112,14 @@
         width: calc(100% - 130px);
         height: 50px;
         .form__text{
-          // float: left;
           padding-left: 10px;
           height: 50px;
           border: none;
           width: calc(100% - 90px);
         }
         .input-box__image{
-          // float: left;
           background-color: $white;
           height: 50px;    
-          // line-height: 50px;
           border: none;
           font-size: 20px;
           .file__tag{
