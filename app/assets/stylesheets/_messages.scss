@@ -1,0 +1,143 @@
+.wrapper{
+  display: flex;
+  .sidebars{
+    width:300px;
+    background-color: $white;
+    &__header{
+      height: 100px;
+      line-height: 100px;
+      background-color: $sidebar-header;
+      display: flex;
+      position: relative;
+      &--username{
+        color: $white;
+        font-size: 16px;
+        margin-left: 20px;
+      }
+      &--icon{
+        position: absolute;
+        right: 20px;
+        .icon1__btn{
+          color: $white;
+        }
+        .icon2__btn{
+          color: $white;
+        }
+      }
+    }
+    &__groups{
+      height: calc(100vh - 100px);
+      background-color: $sidebar-group;
+      .sidebars__group{
+        color: $white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        font-weight: bold;
+        &--name{
+          font-size: 15px;
+        }
+        &--messages{
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .messages{
+    width: calc(100% - 300px);
+    &__infos{
+      height: 100px;
+      background-color: $white;
+      display: flex;
+      justify-content: flex-end;
+      border: solid 0.5px $messages-infos-border;
+      &--left{
+        margin-right: auto;
+        .messages__infos--groupname{
+          margin-top: 35px;
+          margin-left: 40px;
+          color: $messages-infos-groupname;
+          font-size: 20px;
+        }
+        .messages__infos--members{
+          color: $message-contents-group-day;
+          font-size: 12px;
+          margin-top: 15px;
+          margin-left: 40px;
+        }
+      }
+      &--right{
+        align-self: center;
+        color: $lightblue;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 28px;
+        margin-bottom: 28px;
+        margin-right: 40px;
+        border: solid 1px $lightblue;
+      }
+    }
+    &__contents{
+      background-color: $messages-contents;
+      height: calc(100vh - 100px - 90px);
+      &__up{
+        padding-top: 40px;
+        margin-left: 40px;
+        display: flex;
+        .messages__contents__group-user{
+          font-size: 16px;
+          color: $message-contents-group-user;
+        }
+        .messages__contents__group-day{
+          font-size: 12px;
+          color: $message-contents-group-day;
+          margin-left: 10px;
+        }
+      }
+      &__down{
+        margin-left: 40px;
+        margin-top: 10px;
+        font-size: 14px;
+        color: $message-contents-group-user;      
+      }
+    }
+    .forms{
+      box-sizing: border-box;
+      height: 90px;
+      padding: 20px 50px 20px 40px;
+      background-color: $forms;
+      &__group--left{
+        float: left;
+        background-color: $white;
+        width: calc(100% - 130px);
+        height: 50px;
+        .form__text{
+          padding-left: 10px;
+          height: 50px;
+          border: none;
+          width: calc(100% - 90px);
+        }
+        .input-box__image{
+          background-color: $white;
+          height: 50px;    
+          border: none;
+          font-size: 20px;
+          .file__tag{
+            display: none;
+          }
+        }
+      }
+      &__group--right{
+        float: right;
+        border: none;
+        background-color: $lightblue;
+        color: $white;
+        font-size: 16px;
+        width: auto;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
+      } 
+    }
+  }
+}

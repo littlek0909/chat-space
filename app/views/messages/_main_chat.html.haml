@@ -1,0 +1,27 @@
+.messages
+  .messages__infos
+    .messages__infos--left
+      .messages__infos--groupname
+        kamei
+      .messages__infos--members
+        tanaka
+        kamei
+        ikeda
+    .messages__infos--right
+      edit
+  .messages__contents
+    .messages__contents__up
+      .messages__contents__group-user
+        ユーザ名
+      .messages__contents__group-day
+        日にち
+    .messages__contents__down
+      内容
+  .forms
+    %form{action: "https://www.google.co.jp/"}
+      .forms__group--left
+        %input.form__text{placeholder: "type a message"}
+        %label.input-box__image
+          = icon('fa', 'image',class:"icon")
+          %input{type: "file",class: "file__tag"}
+      %input.forms__group--right{type: "submit", value:"Send"}
