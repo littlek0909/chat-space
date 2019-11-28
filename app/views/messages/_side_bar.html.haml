@@ -1,12 +1,12 @@
 .sidebars
   .sidebars__header
     .sidebars__header--username
-      kameikei
+      = current_user.name
     .sidebars__header--icon
       = link_to "#" do
         = icon('fa', 'edit ',class: 'icon1__btn')
         %span<>
-      = link_to "##" do
+      = link_to edit_user_path(current_user) do
         = icon('fa', 'cog',class: 'icon2__btn')
         %span<>
   .sidebars__groups
