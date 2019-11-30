@@ -3,25 +3,17 @@
     .sidebars__header--username
       = current_user.name
     .sidebars__header--icon
-      = link_to "#" do
+      = link_to new_group_path do
         = icon('fa', 'edit ',class: 'icon1__btn')
         %span<>
       = link_to edit_user_path(current_user) do
         = icon('fa', 'cog',class: 'icon2__btn')
         %span<>
   .sidebars__groups
-    .sidebars__group
-      .sidebars__group--name
-        グループ名
-      .sidebars__group--messages
-        メッセージ
-    .sidebars__group
-      .sidebars__group--name
-        グループ名
-      .sidebars__group--messages
-        メッセージ
-    .sidebars__group
-      .sidebars__group--name
-        グループ名
-      .sidebars__group--messages
-        メッセージ
+    - current_user.groups.each do |group|
+      .sidebars__group
+        = link_to group_messages_path(group) do
+          .sidebars__group--name
+            = group.name
+          .sidebars__group--messages
+            メッセージはまだない。

@@ -28,16 +28,22 @@
     &__groups{
       height: calc(100vh - 100px);
       background-color: $sidebar-group;
+      color: $white;
+      font-weight: bold;
       .sidebars__group{
         color: $white;
+        font-weight: bold;
         padding-top: 20px;
         padding-bottom: 20px;
         padding-left: 20px;
-        font-weight: bold;
         &--name{
+          color: $white;
+          font-weight: bold;
           font-size: 15px;
         }
         &--messages{
+          color: $white;
+          font-weight: bold;
           font-size: 11px;
         }
       }
